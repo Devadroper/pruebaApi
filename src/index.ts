@@ -1,8 +1,10 @@
-import express, { Express, Request, Response } from 'express'
+import express, { Express } from 'express'
 import homeRouter from './routes/home.router'
+import 'dotenv/config'
+import './dao/config'
 
 const app: Express = express()
-const PORT = '8080'
+const PORT = process.env.PORT
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
