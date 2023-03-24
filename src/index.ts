@@ -1,13 +1,11 @@
-import express from 'express'
-import homeRouter from './routes/home.router.js'
-import { __dirname } from './utils.js'
+import express, { Express, Request, Response } from 'express'
+import homeRouter from './routes/home.router'
 
-const app = express()
+const app: Express = express()
 const PORT = '8080'
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public"));
 
 app.use('/', homeRouter)
 
